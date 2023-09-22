@@ -31,18 +31,18 @@ while not download_successful:
         if response.status_code == 200:
             with open(appName, "wb") as file:
                 file.write(response.content)
-            print(f"{Fore.GREEN}Updater downloaded successfully.{Style.RESET_ALL}")
+            print(f"{Fore.GREEN}Update downloaded successfully.{Style.RESET_ALL}")
             time.sleep(2)
             download_successful = True
             subprocess.Popen([appName], shell=True)
             sys.exit()
         else:
-            print(f"{Fore.RED}\nFailed to download file. Status code: {response.status_code}. Try again later.{Style.RESET_ALL}")
+            print(f"{Fore.RED}\nFailed to download update file. Status code: {response.status_code}. Try again later.{Style.RESET_ALL}")
             time.sleep(2)
             subprocess.Popen([appName], shell=True)
             sys.exit()
     except requests.RequestException:
-        print(f"{Fore.RED}\nAn error occurred while downloading the file. Try again later.{Style.RESET_ALL}")
+        print(f"{Fore.RED}\nAn error occurred while downloading the update file. Try again later.{Style.RESET_ALL}")
         time.sleep(2)
         subprocess.Popen([appName], shell=True)
         sys.exit()
