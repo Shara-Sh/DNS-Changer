@@ -1,4 +1,4 @@
-import os
+import os, sys
 import re
 import json
 import ctypes
@@ -8,15 +8,15 @@ import subprocess
 import pyfiglet.fonts
 from colorama import Fore, Style
 
-def set_console_title(new_title):
-    ctypes.windll.kernel32.SetConsoleTitleW(new_title)
+def set_console_title(cli_title):
+    ctypes.windll.kernel32.SetConsoleTitleW(cli_title)
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 # CLI Title
-new_title = "DNS Changer"
-set_console_title(new_title)
+cli_title = "DNS Changer"
+set_console_title(cli_title)
 
 # Menu Title
 menu_title = "DNS Changer"
@@ -142,4 +142,4 @@ while True:
     elif choice == '2' :
         disconnect()
     elif choice == '0':
-        exit()
+        sys.exit()
