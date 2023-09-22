@@ -61,11 +61,8 @@ def check_for_updates(current_version):
         else:
             clear()
     else:
-        print(f"{Fore.GREEN}You have the latest version of the app.{Style.RESET_ALL}")
         if os.path.isfile(updaterName):
             os.remove(updaterName)
-            time.sleep(2)
             clear()
         else:
-            time.sleep(2)
             clear()

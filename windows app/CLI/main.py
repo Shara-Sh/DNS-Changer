@@ -20,14 +20,14 @@ def set_console_title(cli_title):
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+current_version = "1.0.0"
+
 # CLI Title
-cli_title = "DNS Changer"
+cli_title = f"DNS Changer v{current_version}"
 set_console_title(cli_title)
 
 # Menu Title
 menu_title = "DNS Changer"
-
-current_version = "1.0.0"
 
 clear()
 
