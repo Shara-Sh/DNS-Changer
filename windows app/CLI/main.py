@@ -1,12 +1,18 @@
+# Standard Library Imports
 import os, sys
 import re
 import json
+import subprocess
+
+# Third-party Library Imports
 import ctypes
 import requests
 import pyfiglet
-import subprocess
 import pyfiglet.fonts
 from colorama import Fore, Style
+
+# My Library Imports
+import update
 
 def set_console_title(cli_title):
     ctypes.windll.kernel32.SetConsoleTitleW(cli_title)
@@ -20,6 +26,8 @@ set_console_title(cli_title)
 
 # Menu Title
 menu_title = "DNS Changer"
+
+current_version = "1.0.0"
 
 clear()
 
@@ -101,6 +109,8 @@ def custom():
     secondary = input("Set Secondary DNS : ")
     subprocess.call(['netsh', 'interface', 'ipv4', 'set', 'dns', '"Wi-Fi"', 'static', f'{primary}'])
     subprocess.call(['netsh', 'interface', 'ipv4', 'add', 'dns', '"Wi-Fi"', f'{secondary}', 'index', '=', '2'])
+
+update.check_for_updates(current_version)
 
 dns_servers = fetch_dns_servers()
 
