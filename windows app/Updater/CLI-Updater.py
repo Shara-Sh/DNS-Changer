@@ -20,7 +20,7 @@ set_console_title(cli_title)
 
 clear()
 
-updated_app = "https://shara-sh.github.io/DNS-Changer/windows%20app/CLI/main.exe"
+updated_app = "https://shara-sh.github.io/DNS-Changer/windows%20app/CLI/CLI-Updater.exe"
 appName = "DNS Changer"
 download_successful = False
 
