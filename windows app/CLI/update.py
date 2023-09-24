@@ -47,22 +47,31 @@ def download_updater():
             sys.exit()
 
 def check_for_updates(current_version):
-    # Replace 'update_server_url' with the URL where you store the latest version information.
-    update_server_url = "https://shara-sh.github.io/DNS-Changer/version.txt"
+    try:
+        response = requests.get("https://www.google.com")
+        
     
-    response = requests.get(update_server_url)
-    latest_version = response.text.strip()
-    if latest_version > current_version:
-        print(f"A new update {Fore.GREEN}(version {latest_version}){Style.RESET_ALL} is available. Please update your app.")
-        user = input("Do you want to update now? (Y/N) ")
-        if user == "y" or user =="Y":
-            download_updater()
-            sys.exit()
+        update_server_url = "https://shara-sh.github.io/DNS-Changer/version.txt"
+        
+        response = requests.get(update_server_url)
+        latest_version = response.text.strip()
+        if latest_version > current_version:
+            print(f"A new update {Fore.GREEN}(version {latest_version}){Style.RESET_ALL} is available. Please update your app.")
+            user = input("Do you want to update now? (Y/N) ")
+            if user == "y" or user =="Y":
+                download_updater()
+                sys.exit()
+            else:
+                clear()
         else:
-            clear()
-    else:
-        if os.path.isfile(updaterName):
-            os.remove(updaterName)
-            clear()
-        else:
-            clear()
+            if os.path.isfile(updaterName):
+                os.remove(updaterName)
+                clear()
+            else:
+                clear()
+                
+        return response.status_code == 200
+    except requests.ConnectionError:
+        print(f"{Fore.YELLOW}No Internet Connection...{Style.RESET_ALL}")
+        time.sleep(2)
+        return False

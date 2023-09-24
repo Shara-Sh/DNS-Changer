@@ -55,10 +55,8 @@ def find_server_by_ip(ip_address, dns_servers):
 def getdns():
     output_bytes = subprocess.check_output(['wmic', 'nicconfig', 'get', 'dnsserversearchorder'])
     
-    # Convert the bytes to a string
     output_str = output_bytes.decode('utf-8')
 
-    # Use regular expressions to extract IP addresses
     dns_addresses = re.findall(r'\d+\.\d+\.\d+\.\d+', output_str)
     return dns_addresses
 
