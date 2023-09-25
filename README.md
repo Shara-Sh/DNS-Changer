@@ -23,7 +23,7 @@ You can choose one of the following methods to install DNS Changer:
 
 ### Option 2: Download from Our Website
 
-1. Visit our [official website](https://shara-sh.github.io/DNS-Changer/downloads) and navigate to the download section.
+1. Visit our [official website](https://shara-sh.github.io/DNS-Changer) and navigate to the download section.
 
 2. Download the latest release of the application for Windows.
 
