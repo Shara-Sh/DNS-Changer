@@ -103,8 +103,11 @@ def custom():
     clear()
     print(pyfiglet.figlet_format(menu_title))
     
-    primary = input("Set Primary DNS : ")
-    secondary = input("Set Secondary DNS : ")
+    
+    print("\nSet Custom DNS Server : \n")
+    
+    primary = input("       Set Primary DNS : ")
+    secondary = input("     Set Secondary DNS : ")
     subprocess.call(['netsh', 'interface', 'ipv4', 'set', 'dns', '"Wi-Fi"', 'static', f'{primary}'])
     subprocess.call(['netsh', 'interface', 'ipv4', 'add', 'dns', '"Wi-Fi"', f'{secondary}', 'index', '=', '2'])
 
