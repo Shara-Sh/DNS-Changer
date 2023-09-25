@@ -3,13 +3,181 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>DNS Changer</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <!-- title icon -->
+        <link rel="icon" href="html/assets/icon/dns-changer-icon.ico">
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="style.css">
+        <!-- bootstrap 5 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- jquary -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <!-- javascript -->
+        <!-- <script src="app.js"></script> -->
+        <!-- tippy js -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/15070fb99f.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://kit.fontawesome.com/15070fb99f.css" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     </head>
-    <h1>DNS Changer</h1>
-    <a href="windows app/CLI/DNS Changer.exe" download="DNS Changer.exe">Download CLI Pre-Release Version</a>
     <body>
+        <div id="carousel" class="carousel-section carousel slide container-fluid" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="html/assets/cli-main.png" class="d-block m-auto container" alt="cli-main">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                      <h4>DNS Changer: Easily change your DNS server settings on Windows</h4>
+                      <p>Improve your internet speed, security, and privacy with DNS Changer.</p>
+                      <a href="#windows-download"><button class="btn">Download DNS Changer now</button></a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="html/assets/cli-dns-server.png" class="d-block m-auto container" alt="cli-dns-server">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                      <h4>Why use DNS Changer?</h4>
+                      <p>DNS Changer can help you</p>
+                      <ul>
+                        <li>Improve your internet speed</li>
+                        <li>Improve your internet security</li>
+                        <li>Improve your internet privacy</li>
+                        <li>Block ads and malware</li>
+                      </ul>
+                      <a href="#windows-tab"><button class="btn">Learn more</button></a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="html/assets/logo-wallpaper.png" class="d-block m-auto container" alt="3">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                      <h4>DNS Changer is easy to use</h4>
+                      <p>Download, install, and change your DNS server settings in minutes</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+        <div class="manual d-flex flex-column align-items-center container">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows-tab-pane" type="button" role="tab" aria-controls="windows-tab-pane" aria-selected="true">Windows</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#linux-tab-pane" type="button" role="tab" aria-controls="linux-tab-pane" aria-selected="false">Linux</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="mac-tab" data-bs-toggle="tab" data-bs-target="#mac-tab-pane" type="button" role="tab" aria-controls="mac-tab-pane" aria-selected="false">Mac</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="ios-tab" data-bs-toggle="tab" data-bs-target="#ios-tab-pane" type="button" role="tab" aria-controls="ios-tab-pane" aria-selected="false">IOS</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="android-tab" data-bs-toggle="tab" data-bs-target="#android-tab-pane" type="button" role="tab" aria-controls="android-tab-pane" aria-selected="false">Andriod</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="windows-tab-pane" role="tabpanel" aria-labelledby="windows-tab" tabindex="0">
+                    <ol>
+                        <li>Click on the Start button and type "Control Panel," then open it.</li>
+                        <li>Go to "Network and Sharing Center."</li>
+                        <li>Click on "Change adapter settings" on the left sidebar.</li>
+                        <li>Right-click on your active network connection and select "Properties."</li>
+                        <li>Choose "Internet Protocol Version 4 (TCP/IPv4)" and click "Properties."</li>
+                        <li>Select "Use the following DNS server addresses" and enter your preferred DNS server addresses.</li>
+                        <li>Click "OK" to save your changes.</li>
+                    </ol>
+                </div>
+                <div class="tab-pane fade" id="linux-tab-pane" role="tabpanel" aria-labelledby="linux-tab" tabindex="0">
+                    <ol>
+                        <li>Click on the network icon in your system tray or top panel (usually looks like Wi-Fi signal bars or a network icon).</li>
+                        <li>Select your active network connection (Wi-Fi or Ethernet) and right-click on it.</li>
+                        <li>Choose "Edit Connections" or "Connection Information" (the wording may vary depending on your Linux distribution).</li>
+                        <li>In the Network Connections window, select your active connection and click the "Edit" button.</li>
+                        <li>In the connection settings window, navigate to the "IPv4 Settings" or "IPv6 Settings" tab, depending on which DNS settings you want to change.</li>
+                        <li>In the "DNS Servers" field, enter the IP addresses of your preferred DNS servers, separating multiple addresses with a comma (e.g., 8.8.8.8, 8.8.4.4 for Google DNS).</li>
+                        <li>Click "Save" to apply the changes.</li>
+                        <li>You may need to disconnect and reconnect to your network for the new DNS settings to take effect.</li>
+                    </ol>
+                </div>
+                <div class="tab-pane fade" id="mac-tab-pane" role="tabpanel" aria-labelledby="mac-tab" tabindex="0">
+                    <ol>
+                        <li>Click the Apple menu and go to "System Preferences."</li>
+                        <li>Select "Network."</li>
+                        <li>Choose your active network connection (Wi-Fi or Ethernet) on the left.</li>
+                        <li>Click "Advanced" in the lower right.</li>
+                        <li>Go to the "DNS" tab.</li>
+                        <li>Add DNS server addresses using the "+” button.</li>
+                        <li>Drag your preferred DNS servers to the top of the list.</li>
+                        <li>Click "OK" and then "Apply."</li>
+                    </ol>
+                </div>
+                <div class="tab-pane fade" id="ios-tab-pane" role="tabpanel" aria-labelledby="ios-tab" tabindex="0">
+                    <ol>
+                        <li>Open the Settings app.</li>
+                        <li>Scroll down and tap "Wi-Fi."</li>
+                        <li>Tap the network you're connected to.</li>
+                        <li>Scroll down and tap "Configure DNS."</li>
+                        <li>Choose "Manual."</li>
+                        <li>Tap "Add Server" and enter the DNS server addresses.</li>
+                        <li>Tap "Save" and then "Back" to save your settings.</li>
+                    </ol>
+                </div>
+                <div class="tab-pane fade" id="android-tab-pane" role="tabpanel" aria-labelledby="android-tab" tabindex="0">
+                    <ol>
+                        <li>Open the Settings app.</li>
+                        <li>Tap on "Network & Internet" or similar, depending on your Android version.</li>
+                        <li>Tap on "Wi-Fi" or the active network connection.</li>
+                        <li>Tap on "Advanced" or "Network preferences."</li>
+                        <li>Tap on "Private DNS" or "IP settings."</li>
+                        <li>Select "Static" or "Enter manually" and enter the DNS server addresses.</li>
+                        <li>Save your settings.</li>
+                    </ol>
+                </div>
+              </div>
+        </div>
+        <div class="download d-flex">
+            <div class="container d-flex justify-content-center align-items-center gap-5">
+                <img src="html/assets/icon/dns-changer-icon.ico" alt="dsn-change-icon">
+                <div>
+                    <h5>Windows x64 v1.0.0</h5>
+                    <a href="https://shara-sh.github.io/DNS-Changer/windows%20app/CLI/DNS%20Changer.exe"><button id="windows-download" class="btn">Download Now</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer d-flex">
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>About Us</h4>
+                        <p>DNS Changer is a Python application that allows you to easily change your DNS server settings on Windows.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="https://shara-sh.github.io/DNS-Changer/windows%20app/CLI/DNS%20Changer.exe">Windows x64 Download</a></li>
+                            <li><a href="#windows-tab">Set DNS Manual</a></li>
+                            <li><a href="https://shara-sh.github.io/DNS-Changer/DNS-Server.json">Avalible DNS</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Contact Us</h4>
+                        <p>Github: <a href="https://github.com/Shara-Sh">Shara-Sh</a></p>
+                        <p>Website: <a href="https://Shara-Sh.github.io">shara-sh.github.io</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </body>
 </html>

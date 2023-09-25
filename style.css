@@ -1,0 +1,82 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --blue: #68C3D4;
+    --orange: #F46036;
+}
+
+.carousel-section {
+    background-color: var(--blue);
+    height: 60vh !important;
+
+    & .carousel-item {
+        & img {
+            /* width: 800px !important; */
+            max-height: 60vh;
+            object-fit: cover;
+        }
+        & h4 {
+            color: var(--white);
+            font-weight: bold;
+        }
+        & p {
+            color: var(--white);
+        }
+        & ul {
+            color: var(--white);
+        }
+        & button {
+            background-color: var(--orange);
+            color: var(--white);
+            &:hover {
+                filter: brightness(90%);
+            }
+        }
+    }
+}
+
+.nav-tabs {
+    & .nav-link.active {
+        background-color: var(--orange) !important;
+        color: var(--white) !important;
+    }
+}
+
+.nav-item {
+    & button {
+        color: var(--black);
+        &:hover {
+            color: var(--orange) !important;
+        }
+    }
+}
+
+.manual {
+    height: 100vh;
+    & ol {
+        word-wrap: break-word;
+    }
+}
+
+.download {
+    background-color: var(--blue);
+    height: 50vh;
+    & button {
+        background-color: var(--orange) !important;
+        color: var(--white) !important;
+        &:hover {
+            filter: brightness(90%) !important;
+        }
+    }
+}
+
+.footer {
+    height: 30vh;
+    & a {
+        color: var(--orange);
+        text-decoration: none;
+        &:hover {
+            filter: brightness(90%);
+        }
+    }
+}
